@@ -1,6 +1,5 @@
 from cloudshell.cgs.snmp.handler import CgsSnmpHandler
 from cloudshell.cgs.cli.handler import CgsCliHandler
-from cloudshell.cgs.runners.autoload import CgsAutoloadRunner
 from cloudshell.cgs.runners.configuration import CgsConfigurationRunner
 from cloudshell.cgs.runners.firmware import CgsFirmwareRunner
 from cloudshell.cgs.runners.state import CgsStateRunner
@@ -14,6 +13,8 @@ from cloudshell.devices.standards.load_balancing.configuration_attributes_struct
 from cloudshell.devices.runners.run_command_runner import RunCommandRunner
 from cloudshell.shell.core.driver_utils import GlobalLock
 from cloudshell.shell.core.resource_driver_interface import ResourceDriverInterface
+
+from cgs.load_balancing.runners.autoload import CgsLoadBalancerAutoloadRunner
 
 
 class CgsCosLoadbalancerShell2GDriver(ResourceDriverInterface, GlobalLock):
@@ -64,9 +65,9 @@ class CgsCosLoadbalancerShell2GDriver(ResourceDriverInterface, GlobalLock):
 
             snmp_handler = CgsSnmpHandler(resource_config, logger, api, cli_handler)
 
-            autoload_operations = CgsAutoloadRunner(logger=logger,
-                                                    resource_config=resource_config,
-                                                    snmp_handler=snmp_handler)
+            autoload_operations = CgsLoadBalancerAutoloadRunner(logger=logger,
+                                                                resource_config=resource_config,
+                                                                snmp_handler=snmp_handler)
 
             response = autoload_operations.discover()
             logger.info('Autoload command completed')
@@ -517,7 +518,7 @@ if __name__ == "__main__":
         get_api.return_value.DecryptPassword = lambda x: mock.MagicMock(Value=x)
 
         # get inventory
-        # print get_inventory(driver=dr, context=context)
+        print get_inventory(driver=dr, context=context)
 
         # health check
         # print health_check(driver=dr, context=context)
