@@ -356,7 +356,7 @@ if __name__ == "__main__":
         context.resource.name = "CGS COS Loadbalancer Shell 2G"
         context.resource.fullname = "CGS COS Loadbalancer Shell 2G"
         context.resource.address = address
-        context.resource.family = "CS_Switch"
+        context.resource.family = "CS_LoadBalancer"
         context.reservation = ReservationContextDetails(*(None,) * 7)
         context.reservation.reservation_id = '0cc17f8c-75ba-495f-aeb5-df5f0f9a0e97'
         context.resource.attributes = {}

@@ -1,7 +1,8 @@
 cloudshell-core>=2.2,<2.3
-#cloudshell-networking-devices>=2.7,<2.8
+cloudshell-networking-devices>=2.8,<2.9
 cloudshell-networking>=5.1.0,<5.2.0
 cloudshell-shell-core>=4.0,<4.1
-#cloudshell-cgs>=1.0,<1.1
-git+https://github.com/QualiSystems/cloudshell-cgs.git@dev#egg=cloudshell_cgs
-git+https://github.com/QualiSystems/cloudshell-networking-devices.git@feature/apiddubny_add_load_balancing_standard#egg=cloudshell_networking_devices
+cloudshell-cgs>=1.1,<1.2
+
+#git+https://github.com/QualiSystems/cloudshell-cgs.git@dev#egg=cloudshell_cgs
+#git+https://github.com/QualiSystems/cloudshell-networking-devices.git@feature/apiddubny_add_load_balancing_standard#egg=cloudshell_networking_devices
