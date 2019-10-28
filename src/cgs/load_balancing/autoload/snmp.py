@@ -38,8 +38,10 @@ class CgsLoadBalancerSNMPAutoload(AbstractCgsSNMPAutoload):
         for lb_group in lb_groups.itervalues():
             server_farm = GenericServerFarm(shell_name=self.shell_name,
                                             name=lb_group["lbGroupName"],
-                                            unique_id="{}.{}.{}".format(self.resource_name, "port", lb_group['suffix']))
+                                            unique_id="{}.{}.{}".format(self.resource_name,
+                                                                        "group",
+                                                                        lb_group['suffix']))
 
             server_farm.virtual_server_port = lb_group["lbGroupOutputs"]
-            server_farm.algorithm = lb_group["lbGroupAlgo"]
+            server_farm.algorithm = lb_group["lbGroupAlgo"].replace("'", "")
             self.resource.add_sub_resource(lb_group['suffix'], server_farm)
