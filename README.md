@@ -23,7 +23,7 @@ Release date: August 2019
 A shell integrates a device model, application or other technology with CloudShell. A shell consists of a data model that defines how the device and its properties are modeled in CloudShell, along with automation that enables interaction with the device via CloudShell.
 
 ### **CGS COS Loadalancer Shell 2G**
-**CGS COS Loadbalancer Shell 2G** shell provides you with connectivity and management capabilities such as device structure discovery and power management for the resource.
+The **CGS COS Loadbalancer Shell 2G** shell provides you with connectivity and management capabilities such as device structure discovery and power management for the resource.
 
 For more information on the device, see the vendor's official product documentation.
 
@@ -155,7 +155,7 @@ You can also modify existing resources, see [Managing Resources in the Inventory
   
   4. Click **Create**.
   
-  5. In the **Resource** dialog box, enter the device's settings. For details, see [Device Name Attributes](#device-name-attributes). 
+  5. In the **Resource** dialog box, enter the device's settings. For details, see the Loadbalancer Shell Standard's [Attributes](https://github.com/QualiSystems/cloudshell-standards/blob/master/Documentation/Load%20Balancer%20Shell%20Standard.md#attributes) section. 
   
   6. Click **Continue**. <br><br>CloudShell validates the device’s settings and updates the new resource with the device’s structure (if the device has a structure).
 
