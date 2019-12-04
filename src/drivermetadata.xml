@@ -8,11 +8,6 @@
                                Description="The command to run. Note that commands that require a response are not supported."/>
                 </Parameters>
             </Command>
-            <Command Name="ApplyConnectivityChanges" DisplayName="ApplyConnectivityChanges" Tags="allow_unreserved">
-                <Parameters>
-                    <Parameter Name="request" Type="String" Mandatory = "True" DefaultValue="" Description=""/>
-                </Parameters>
-            </Command>
             <Command Name="orchestration_save" >
                 <Parameters>
                     <Parameter Name="mode" Type="Lookup" Mandatory = "True" AllowedValues="shallow,deep"  DefaultValue="shallow"
